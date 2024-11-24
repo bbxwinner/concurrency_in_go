@@ -5,13 +5,21 @@ import (
 	"testing"
 )
 
-// go test -bench=. -cpu=1 concurrency_in_go/ch3/sync/goroutine/ctx_change/ctx_change_test.go
+// go test -bench=. -cpu=1 ch3/goroutine/measure_ctx_change/ctx_change_test.go 
 // goos: linux
 // goarch: amd64
 // cpu: Intel(R) Core(TM) i5-10310U CPU @ 1.70GHz
 // BenchmarkContextSwitch   6501746               173.1 ns/op
 // PASS
 // ok      command-line-arguments  1.315s
+
+// go test -bench=. -cpu=1 ch3/goroutine/measure_ctx_change/ctx_change_test.go 
+// goos: linux
+// goarch: amd64
+// cpu: AMD Ryzen 3 3200G with Radeon Vega Graphics    
+// BenchmarkContextSwitch   5028302               215.6 ns/op
+// PASS
+// ok      command-line-arguments  1.331s
 
 func BenchmarkContextSwitch(b *testing.B) {
 	var wg sync.WaitGroup
